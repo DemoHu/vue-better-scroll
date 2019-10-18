@@ -1,0 +1,53 @@
+<!--
+ * @Author: Siwen
+ * @Date: 2019-10-15 18:10:49
+ * @LastEditors: Siwen
+ * @LastEditTime: 2019-10-17 10:37:31
+ * @Description: 
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <script src="<%= BASE_URL %>datafeeds/udf/dist/polyfills.js"></script>
+    <script src="<%= BASE_URL %>datafeeds/udf/dist/bundle.js"></script>
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title>qihuo-h5</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- 线上环境使用cdn -->
+    <% for (var i in htmlWebpackPlugin.options.cdn && htmlWebpackPlugin.options.cdn.js) { %>
+      <script src="<%= htmlWebpackPlugin.options.cdn.js[i] %>"></script>
+    <% } %>
+  </body>
+</html>
+<script>
+  window.onload = function() {
+    // 阻止双击放大
+    var lastTouchEnd = 0;
+    document.addEventListener('touchstart', function(event) {
+      if (event.touches.length > 1) {
+        event.preventDefault();
+      }
+    });
+    document.addEventListener('touchend', function(event) {
+      var now = (new Date()).getTime();
+      if (now - lastTouchEnd <= 300) {
+          event.preventDefault();
+      }
+      lastTouchEnd = now;
+    }, false);
+    // safari 阻止双指
+    document.addEventListener('gesturestart', function (event) {
+      event.preventDefault();
+    });
+  }
+</script>

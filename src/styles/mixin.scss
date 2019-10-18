@@ -1,0 +1,15 @@
+/*
+ * @Author: Siwen
+ * @Date: 2019-06-17 15:43:27
+ * @LastEditors: Siwen
+ * @LastEditTime: 2019-06-17 15:44:24
+ * @Description: mixin函数
+ */
+ @mixin background-func($url) {
+  background: url($url) no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+}
+@mixin background-gradual($deg, $star, $end) {
+  background-image: linear-gradient($deg, $star 0%, $end 100%);
+}

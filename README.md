@@ -1,0 +1,36 @@
+<!--
+ * @Author: Siwen
+ * @Date: 2019-10-18 17:06:36
+ * @LastEditors: Siwen
+ * @LastEditTime: 2019-10-18 17:06:36
+ * @Description: 
+ -->
+# 封装了better-scroll
+
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Run your tests
+```
+npm run test
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
